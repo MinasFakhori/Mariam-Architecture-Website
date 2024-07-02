@@ -21,31 +21,56 @@ export default function App() {
         />
       </Fade>
 
+      <ProjectTwoThreeWrapper>
+        <Fade damping>
+          <Project
+            imgSrc={"./02.jpg"}
+            title="Harvesting newLine Healing"
+            year="[MA YR 1]"
+            isTextTop={true}
+            isTextLeft={false}
+            imgWidth="70%"
+          />
+        </Fade>
+
+        <Fade damping>
+          <Project
+            imgSrc={"./03.jpg"}
+            title="The Towers of newLine Lost Memory"
+            year="[BA YR 3]"
+            isTextTop={false}
+            isTextLeft={true}
+            imgWidth="70%"
+            specialMargin="60%"
+          />
+        </Fade>
+      </ProjectTwoThreeWrapper>
+
       <Fade damping>
-        <ProjectTwoThreeWrapper>
         <Project
-          imgSrc={"./02.jpg"}
-          title="Harvesting newLine Healing"
-          year="[MA YR 1]"
-          isTextTop={true}
-          isTextLeft={false}
-          imgWidth="70%"
-        />
-
-
-        <Project
-          imgSrc={"./03.jpg"}
-          title="The Towers of newLine Lost Memory"
-          year="[BA YR 3]"
+          imgSrc={"./04.jpg"}
+          title="The Liquid Fishing newLine Vessels"
+          year="[BA YR 2]"
           isTextTop={false}
-          isTextLeft={true}
-          imgWidth="70%"
-          specialMargin="30%"
+          isTextLeft={false}
+          specialMargin="60px"
+          specialMarginLeft="50px"
+          imgWidth="65%"
         />
-        </ProjectTwoThreeWrapper>
       </Fade>
 
-      {/* <ProjectTwo data-aos="fade-down" /> */}
+
+      <Fade damping>
+        <Project
+          imgSrc={"./05.jpg"}
+          title="Liquid Lifelines: newLine A Slow Form of newLine Violence"
+          year="[MA YR 2]"
+          isTextTop={false}
+          isTextLeft={false}
+          imgWidth="25%"
+        />
+      </Fade>
+
     </Container>
   );
 }

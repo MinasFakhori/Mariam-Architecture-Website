@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export default function Project({ imgSrc, imgWidth,title, year, isTextTop, isTextLeft , specialMargin}) {
+export default function Project({ imgSrc, imgWidth,title, year, isTextTop, isTextLeft , specialMargin, specialMarginLeft}) {
   const newLine = (str) => {
     if (str.includes("newLine")) {
       const split = title.split("newLine");
@@ -18,7 +18,7 @@ export default function Project({ imgSrc, imgWidth,title, year, isTextTop, isTex
     return <Text>{str}</Text>;
   };
   return (
-    <Container specialMargin={specialMargin}>
+    <Container specialMargin={specialMargin} specialMarginLeft={specialMarginLeft}>
         {console.log(specialMargin)}
       <TextWrapper isTextTop={isTextTop} isTextLeft={isTextLeft}>
         {newLine(title)}
@@ -34,7 +34,8 @@ export default function Project({ imgSrc, imgWidth,title, year, isTextTop, isTex
 const Container = styled.div`
   display: grid;
   /* margin-top: 40px; */
-  margin-top: ${props => props.specialMargin === undefined ? "40px" : props.specialMargin}
+  margin-top: ${props => props.specialMargin === undefined ? "40px" : props.specialMargin};
+  margin-left: ${props => props.specialMarginLeft === undefined ? "0px" : props.specialMarginLeft}
 `;
 
 const TextWrapper = styled.div`
