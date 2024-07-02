@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import Nav from "./Nav";
-import ProjectOne from "./ProjectOne";
-import ProjectTwo from "./ProjectTwo";
 import { Fade } from "react-awesome-reveal";
-import ProjectThree from "./ProjectThree";
 import Project from "./Project";
 export default function App() {
   return (
@@ -12,7 +9,7 @@ export default function App() {
       <Nav />
       <Fade damping>
         <Project
-          imgSrc={"./01.jpg"}
+          imgSrc={"./01_gif.gif"}
           title="The Liquid Fishing newLine Vessels"
           year="[MA YR 2]"
           isTextTop={false}
@@ -59,7 +56,6 @@ export default function App() {
         />
       </Fade>
 
-
       <Fade damping>
         <Project
           imgSrc={"./05.jpg"}
@@ -68,9 +64,9 @@ export default function App() {
           isTextTop={false}
           isTextLeft={false}
           imgWidth="25%"
+          specialTextMargin="9em"
         />
       </Fade>
-
     </Container>
   );
 }
