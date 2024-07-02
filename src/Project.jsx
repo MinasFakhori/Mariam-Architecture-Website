@@ -61,7 +61,6 @@ const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: ${(props) => (props.isTextTop ? "flex-start" : "flex-end")};
-  font-size: 15px;
   grid-column: ${(props) => (props.isTextLeft ? "1" : "2")};
   grid-row: 1 / 5;
 `;
@@ -70,11 +69,12 @@ const Text = styled.p`
   font-size: 15px;
   margin: 8% 0 0 0;
   margin-right: ${(props) =>
-    props.specialTextMargin === undefined ? "0" : props.specialTextMargin};
+    props.specialTextMargin === undefined ? "5px" : props.specialTextMargin};
 `;
 
 const YearText = styled.p`
   font-size: 12px;
+  margin-top: 5em; 
 `;
 
 const Img = styled.img`

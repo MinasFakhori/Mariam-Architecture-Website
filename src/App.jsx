@@ -32,13 +32,14 @@ export default function App() {
 
         <Fade damping>
           <Project
-            imgSrc={"./03.jpg"}
+            imgSrc={"./03_more cropped (1).jpg"}
             title="The Towers of newLine Lost Memory"
             year="[BA YR 3]"
             isTextTop={false}
             isTextLeft={true}
-            imgWidth="70%"
-            specialMargin="60%"
+            imgWidth="90%"
+            specialMargin="90%"
+          
           />
         </Fade>
       </ProjectTwoThreeWrapper>
