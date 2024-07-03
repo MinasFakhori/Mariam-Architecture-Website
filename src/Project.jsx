@@ -56,47 +56,81 @@ export default function Project({
 }
 
 const Container = styled.div`
-  display: grid;
-  margin-top: ${($props) =>
-    $props.$specialMargin === undefined ? "40px" : $props.$specialMargin};
-  margin-left: ${($props) =>
-    $props.$specialMarginLeft === undefined
-      ? "0px"
-      : $props.$specialMarginLeft};
+  @media screen and (min-width: 800px) {
+    display: grid;
+    margin-top: ${($props) =>
+      $props.$specialMargin === undefined ? "40px" : $props.$specialMargin};
+    margin-left: ${($props) =>
+      $props.$specialMarginLeft === undefined
+        ? "0px"
+        : $props.$specialMarginLeft};
+  }
+
+  @media screen and (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const TextWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: ${($props) =>
-    $props.$isTextTop ? "flex-start" : "flex-end"};
-  grid-column: ${($props) => ($props.$isTextLeft ? "1" : "2")};
-  grid-row: 1 / 5;
-  margin: ${($props) =>
-    $props.$textMargin === undefined ? 0 : $props.$testMargin};
+  @media screen and (min-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: ${($props) =>
+      $props.$isTextTop ? "flex-start" : "flex-end"};
+    grid-column: ${($props) => ($props.$isTextLeft ? "1" : "2")};
+    grid-row: 1 / 5;
+    margin: ${($props) =>
+      $props.$textMargin === undefined ? 0 : $props.$testMargin};
+  }
+
+  @media screen and (max-width: 800px) {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    
+  }
 `;
 
 const Text = styled.p`
+  @media screen and (min-width: 800px) {
   font-size: 15px;
   margin: 8% 0 0 0;
   margin-right: ${($props) =>
     $props.$specialTextMargin === undefined
       ? "5px"
       : $props.$specialTextMargin};
+  }
+
 `;
 
 const YearText = styled.p`
-  font-size: 12px;
-  margin-top: 5em;
+  @media screen and (min-width: 800px) {
+    font-size: 12px;
+    margin-top: 5em;
+  }
 `;
 
 const Img = styled.img`
-  width: ${($props) => $props.$imgWidth};
-  float: ${($props) => ($props.$isTextLeft ? "right" : "left")};
   border-radius: 5px;
+  @media screen and (min-width: 800px) {
+    width: ${($props) => $props.$imgWidth};
+    float: ${($props) => ($props.$isTextLeft ? "right" : "left")};
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 const ImgWrapper = styled.div`
-  grid-column: ${($props) => ($props.$isTextLeft ? "2" : "1")};
-  grid-row: 1 / 5;
+  @media screen and (min-width: 800px) {
+    grid-column: ${($props) => ($props.$isTextLeft ? "2" : "1")};
+    grid-row: 1 / 5;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    margin-bottom: 5em;
+  }
 `;
