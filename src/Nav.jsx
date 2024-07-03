@@ -32,10 +32,9 @@ const Title = styled.p`
   font-weight: light;
   padding: 0px;
   margin: 0px;
-  align-self:flex-start;
-  justify-self:flex-start; 
+  align-self: flex-start;
+  justify-self: flex-start;
 `;
-
 
 const ProjectsWrapper = styled.div`
   display: flex;
@@ -47,7 +46,6 @@ const Projects = styled.p`
   flex-direction: column;
   margin: 15px 20px;
   align-items: center;
-  justify-content:start;   
-  font-size:15px; 
-  
+  justify-content: start;
+  font-size: 15px;
 `;

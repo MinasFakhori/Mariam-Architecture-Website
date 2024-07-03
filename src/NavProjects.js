@@ -7,5 +7,5 @@ export const NavProjects = [
 ];
 
 export const NavProjectsPhone = NavProjects.map((e) =>
-    e.replace(/newLine/g, "")
-  );
+  e.replace(/newLine/g, "")
+);

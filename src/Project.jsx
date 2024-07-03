@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 import React from "react";
+import PropTypes from "prop-types";
+
 export default function Project({
   imgSrc,
   title,
@@ -112,9 +114,9 @@ const YearText = styled.p`
     margin-top: 5em;
   }
   @media screen and (max-width: 800px) {
-    font-size:9px;
-    margin-bottom: 1em; 
-    align-self:end; 
+    font-size: 9px;
+    margin-bottom: 1em;
+    align-self: end;
   }
 `;
 
@@ -141,3 +143,15 @@ const ImgWrapper = styled.div`
     margin-bottom: 5em;
   }
 `;
+
+Project.propTypes = {
+  imgSrc: PropTypes.string,
+  title: PropTypes.string,
+  year: PropTypes.string,
+  $imgWidth: PropTypes.string,
+  $isTextTop: PropTypes.bool,
+  $isTextLeft: PropTypes.bool,
+  $specialMargin: PropTypes.string,
+  $specialMarginLeft: PropTypes.string,
+  $textMargin: PropTypes.string,
+};

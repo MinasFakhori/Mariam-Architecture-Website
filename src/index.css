@@ -1,8 +1,9 @@
-body{
+body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Calibri', 'Gill Sans', 'Gill Sans MT',  'Trebuchet MS', sans-serif;
-  color:rgb(91,91,91);
+  font-family: "Calibri", "Gill Sans", "Gill Sans MT", "Trebuchet MS",
+    sans-serif;
+  color: rgb(91, 91, 91);
   background-color: rgb(244, 247, 234);
 }

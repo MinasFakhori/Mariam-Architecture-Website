@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { NavProjectsPhone } from "./NavProjects";
 
@@ -63,7 +63,7 @@ const ArrowImg = styled.img`
 
 const ContentContainer = styled.ul`
   display: flex;
-  padding: 0 1em; 
+  padding: 0 1em;
   flex-direction: column;
   align-items: revert;
   flex-wrap: wrap;
@@ -82,6 +82,6 @@ const Projects = styled.li`
   margin: 15px 0px;
   flex-wrap: wrap;
   list-style-type: none;
-  text-align:center;
-  font-size:12px;
+  text-align: center;
+  font-size: 12px;
 `;
