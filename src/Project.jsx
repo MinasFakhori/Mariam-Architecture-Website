@@ -87,27 +87,34 @@ const TextWrapper = styled.div`
   @media screen and (max-width: 800px) {
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
-    
+    justify-content: space-between;
   }
 `;
 
 const Text = styled.p`
   @media screen and (min-width: 800px) {
-  font-size: 15px;
-  margin: 8% 0 0 0;
-  margin-right: ${($props) =>
-    $props.$specialTextMargin === undefined
-      ? "5px"
-      : $props.$specialTextMargin};
+    font-size: 15px;
+    margin: 8% 0 0 0;
+    margin-right: ${($props) =>
+      $props.$specialTextMargin === undefined
+        ? "5px"
+        : $props.$specialTextMargin};
   }
 
+  @media screen and (max-width: 800px) {
+    font-size: 13px;
+  }
 `;
 
 const YearText = styled.p`
   @media screen and (min-width: 800px) {
     font-size: 12px;
     margin-top: 5em;
+  }
+  @media screen and (max-width: 800px) {
+    font-size:9px;
+    margin-bottom: 1em; 
+    align-self:end; 
   }
 `;
 

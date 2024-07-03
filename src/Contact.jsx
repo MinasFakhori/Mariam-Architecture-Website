@@ -38,7 +38,7 @@ const Container = styled.ul`
 
   @media screen and (max-width: 800px) {
     flex-direction: column;
-    
+    margin-top: -1em;
   }
 `;
 
@@ -53,6 +53,5 @@ const Li = styled.li`
 
   @media screen and (max-width: 800px) {
     margin: 1em 0;
-    
   }
 `;

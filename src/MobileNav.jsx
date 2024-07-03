@@ -4,7 +4,6 @@ import { NavProjectsPhone } from "./NavProjects";
 
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(NavProjectsPhone);
   return (
     <Container>
       <ClosedContainer>
@@ -64,12 +63,14 @@ const ArrowImg = styled.img`
 
 const ContentContainer = styled.ul`
   display: flex;
-  flex-direction:column; 
-  align-items:baseline; 
-  list-style-type: none;
+  padding: 0 1em; 
+  flex-direction: column;
+  align-items: revert;
+  flex-wrap: wrap;
 
-  border: 1px solid black; 
-  border-radius: 10px; 
+  list-style-type: none;
+  border: 0.5px solid black;
+  border-radius: 10px;
 
   max-height: ${({ isOpen }) => (isOpen ? "100%" : "0")};
   overflow: hidden;
@@ -78,7 +79,9 @@ const ContentContainer = styled.ul`
 `;
 
 const Projects = styled.li`
-  margin: 20px 0px ;
-  flex-wrap:wrap; 
-  
+  margin: 15px 0px;
+  flex-wrap: wrap;
+  list-style-type: none;
+  text-align:center;
+  font-size:12px;
 `;
