@@ -36,8 +36,8 @@ const Container = styled.ul`
   flex-direction: row;
   list-style-type: none;
 
-  @media screen and (max-width:800px) {
-    display:none; 
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
     
   }
 `;
@@ -50,4 +50,9 @@ const Anchor = styled.a`
 const Li = styled.li`
   margin-right: 3em;
   margin-top: 8em;
+
+  @media screen and (max-width: 800px) {
+    margin: 1em 0;
+    
+  }
 `;
