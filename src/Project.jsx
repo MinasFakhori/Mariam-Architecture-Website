@@ -3,14 +3,14 @@ import { Fade } from "react-awesome-reveal";
 import React from "react";
 export default function Project({
   imgSrc,
-  imgWidth,
   title,
   year,
-  isTextTop,
-  isTextLeft,
-  specialMargin,
-  specialMarginLeft,
-  textMargin,
+  $imgWidth,
+  $isTextTop,
+  $isTextLeft,
+  $specialMargin,
+  $specialMarginLeft,
+  $textMargin,
 }) {
   const newLine = (str) => {
     if (str.includes("newLine")) {
@@ -31,17 +31,17 @@ export default function Project({
   return (
     <Fade>
       <Container
-        specialMargin={specialMargin}
-        specialMarginLeft={specialMarginLeft}
+        $specialMargin={$specialMargin}
+        $specialMarginLeft={$specialMarginLeft}
       >
-        <TextWrapper testMargin={textMargin} isTextTop={isTextTop} isTextLeft={isTextLeft}>
+        <TextWrapper $testMargin={$textMargin} $isTextTop={$isTextTop} $isTextLeft={$isTextLeft}>
           {newLine(title)}
           <YearText>{year}</YearText>
         </TextWrapper>
         <ImgWrapper>
           <Img
-            imgWidth={imgWidth}
-            isTextLeft={isTextLeft}
+            $imgWidth={$imgWidth}
+            $isTextLeft={$isTextLeft}
             src={imgSrc}
             alt=""
           />
@@ -53,27 +53,26 @@ export default function Project({
 
 const Container = styled.div`
   display: grid;
-  /* margin-top: 40px; */
-  margin-top: ${(props) =>
-    props.specialMargin === undefined ? "40px" : props.specialMargin};
-  margin-left: ${(props) =>
-    props.specialMarginLeft === undefined ? "0px" : props.specialMarginLeft};
+  margin-top: ${($props) =>
+    $props.$specialMargin === undefined ? "40px" : $props.$specialMargin};
+  margin-left: ${($props) =>
+    $props.$specialMarginLeft === undefined ? "0px" : $props.$specialMarginLeft};
 `;
 
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: ${(props) => (props.isTextTop ? "flex-start" : "flex-end")};
-  grid-column: ${(props) => (props.isTextLeft ? "1" : "2")};
+  justify-content: ${($props) => ($props.$isTextTop ? "flex-start" : "flex-end")};
+  grid-column: ${($props) => ($props.$isTextLeft ? "1" : "2")};
   grid-row: 1 / 5;
-  margin: ${props => props.textMargin === undefined ? 0: props.testMargin}
+  margin: ${$props => $props.$textMargin === undefined ? 0: $props.$testMargin}
 `;
 
 const Text = styled.p`
   font-size: 15px;
   margin: 8% 0 0 0;
-  margin-right: ${(props) =>
-    props.specialTextMargin === undefined ? "5px" : props.specialTextMargin};
+  margin-right: ${($props) =>
+    $props.$specialTextMargin === undefined ? "5px" : $props.$specialTextMargin};
 `;
 
 const YearText = styled.p`
@@ -82,12 +81,12 @@ const YearText = styled.p`
 `;
 
 const Img = styled.img`
-  width: ${(props) => props.imgWidth};
-  float: ${(props) => (props.isTextLeft ? "right" : "left")};
+  width: ${($props) => $props.$imgWidth};
+  float: ${($props) => ($props.$isTextLeft ? "right" : "left")};
   border-radius: 5px;
 `;
 
 const ImgWrapper = styled.div`
-  grid-column: ${(props) => (props.isTextLeft ? "2" : "1")};
+  grid-column: ${($props) => ($props.$isTextLeft ? "2" : "1")};
   grid-row: 1 / 5;
 `;
