@@ -2,12 +2,12 @@ import styled from "styled-components";
 import Nav from "./Nav";
 import Project from "./Project";
 import Contact from "./Contact";
+import NavPicker from "./NavPicker";
 export default function App() {
-
   return (
     <Container>
       <Name>Mariam Fakhori</Name>
-      <Nav />
+      <NavPicker />
       <Project
         imgSrc={"01-com.gif"}
         title="The Liquid Fishing newLine Vessels"
@@ -67,10 +67,18 @@ export default function App() {
 const Container = styled.div`
   padding: 5px;
   margin: 40px 70px;
+
+  @media screen and (max-width: 800px) {
+    margin: 5px;
+  }
 `;
 
 const Name = styled.p`
   font-size: 19px;
+  margin-left: 2px;
+
+  @media screen and (max-width: 800px) {
+  }
 `;
 
 const ProjectTwoThreeWrapper = styled.div`

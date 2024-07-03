@@ -5,16 +5,27 @@ export default function Contact() {
     <Container>
       <Li>Contact:</Li>
       <Li>
-        <Anchor target="_blank" href="mailto:mariamfakhori21@gmail.com">EMAIL</Anchor>
+        <Anchor target="_blank" href="mailto:mariamfakhori21@gmail.com">
+          EMAIL
+        </Anchor>
       </Li>
 
       <Li>
-        <Anchor  target="_blank" href="https://www.linkedin.com/in/mariam-fakhori/">LINKEDIN</Anchor>
+        <Anchor
+          target="_blank"
+          href="https://www.linkedin.com/in/mariam-fakhori/"
+        >
+          LINKEDIN
+        </Anchor>
       </Li>
 
-
       <Li>
-        <Anchor target="_blank" href="https://www.instagram.com/m.archi_design/">INSTAGRAM</Anchor>
+        <Anchor
+          target="_blank"
+          href="https://www.instagram.com/m.archi_design/"
+        >
+          INSTAGRAM
+        </Anchor>
       </Li>
     </Container>
   );
@@ -24,16 +35,19 @@ const Container = styled.ul`
   display: flex;
   flex-direction: row;
   list-style-type: none;
+
+  @media screen and (max-width:800px) {
+    display:none; 
+    
+  }
 `;
 
-
 const Anchor = styled.a`
-  color: rgb(91,91,91);
+  color: rgb(91, 91, 91);
   text-decoration: none;
-`; 
+`;
 
 const Li = styled.li`
-margin-right:3em; 
-margin-top: 8em; 
-
+  margin-right: 3em;
+  margin-top: 8em;
 `;

@@ -16,7 +16,7 @@ export default function Project({
     if (str.includes("newLine")) {
       const split = title.split("newLine");
       return (
-        <Text >
+        <Text>
           {split.map((e) => (
             <React.Fragment key={e}>
               {e} <br />
@@ -34,7 +34,11 @@ export default function Project({
         $specialMargin={$specialMargin}
         $specialMarginLeft={$specialMarginLeft}
       >
-        <TextWrapper $testMargin={$textMargin} $isTextTop={$isTextTop} $isTextLeft={$isTextLeft}>
+        <TextWrapper
+          $testMargin={$textMargin}
+          $isTextTop={$isTextTop}
+          $isTextLeft={$isTextLeft}
+        >
           {newLine(title)}
           <YearText>{year}</YearText>
         </TextWrapper>
@@ -56,23 +60,29 @@ const Container = styled.div`
   margin-top: ${($props) =>
     $props.$specialMargin === undefined ? "40px" : $props.$specialMargin};
   margin-left: ${($props) =>
-    $props.$specialMarginLeft === undefined ? "0px" : $props.$specialMarginLeft};
+    $props.$specialMarginLeft === undefined
+      ? "0px"
+      : $props.$specialMarginLeft};
 `;
 
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: ${($props) => ($props.$isTextTop ? "flex-start" : "flex-end")};
+  justify-content: ${($props) =>
+    $props.$isTextTop ? "flex-start" : "flex-end"};
   grid-column: ${($props) => ($props.$isTextLeft ? "1" : "2")};
   grid-row: 1 / 5;
-  margin: ${$props => $props.$textMargin === undefined ? 0: $props.$testMargin}
+  margin: ${($props) =>
+    $props.$textMargin === undefined ? 0 : $props.$testMargin};
 `;
 
 const Text = styled.p`
   font-size: 15px;
   margin: 8% 0 0 0;
   margin-right: ${($props) =>
-    $props.$specialTextMargin === undefined ? "5px" : $props.$specialTextMargin};
+    $props.$specialTextMargin === undefined
+      ? "5px"
+      : $props.$specialTextMargin};
 `;
 
 const YearText = styled.p`

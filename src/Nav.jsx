@@ -1,19 +1,13 @@
 import styled from "styled-components";
 import React from "react";
+import { NavProjects } from "./navProjects";
 
 export default function Nav() {
-  const navProjects = [
-    "The Liquid Fishing newLine Vessels",
-    "Harvesting newLine Healing",
-    "The Towers of newLine Lost Memory",
-    "The Little Village",
-    "Liquid Lifelines: newLine A Slow Form of  newLine Violence",
-  ];
   return (
     <Container>
       <Title>Projects</Title>
       <ProjectsWrapper>
-        {navProjects.map((project, index) => (
+        {NavProjects.map((project, index) => (
           <Projects key={index}>
             {project.split("newLine").map((line, idx) => (
               <React.Fragment key={idx}>
