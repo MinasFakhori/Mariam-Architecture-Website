@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Fade } from "react-awesome-reveal";
+import React from "react";
 export default function Project({
   imgSrc,
   imgWidth,
@@ -13,13 +15,12 @@ export default function Project({
   const newLine = (str) => {
     if (str.includes("newLine")) {
       const split = title.split("newLine");
-      console.log(split);
       return (
-        <Text   specialTextMargin={specialTextMargin}>
+        <Text specialTextMargin={specialTextMargin}>
           {split.map((e) => (
-            <>
+            <React.Fragment key={e}>
               {e} <br />
-            </>
+            </React.Fragment>
           ))}
         </Text>
       );
@@ -28,23 +29,25 @@ export default function Project({
     return <Text>{str}</Text>;
   };
   return (
-    <Container
-      specialMargin={specialMargin}
-      specialMarginLeft={specialMarginLeft}
-    >
-      {console.log(specialMargin)}
-      <TextWrapper
-      
-        isTextTop={isTextTop}
-        isTextLeft={isTextLeft}
+    <Fade>
+      <Container
+        specialMargin={specialMargin}
+        specialMarginLeft={specialMarginLeft}
       >
-        {newLine(title)}
-        <YearText>{year}</YearText>
-      </TextWrapper>
-      <ImgWrapper>
-        <Img imgWidth={imgWidth} isTextLeft={isTextLeft} src={imgSrc} alt="" />
-      </ImgWrapper>
-    </Container>
+        <TextWrapper isTextTop={isTextTop} isTextLeft={isTextLeft}>
+          {newLine(title)}
+          <YearText>{year}</YearText>
+        </TextWrapper>
+        <ImgWrapper>
+          <Img
+            imgWidth={imgWidth}
+            isTextLeft={isTextLeft}
+            src={imgSrc}
+            alt=""
+          />
+        </ImgWrapper>
+      </Container>
+    </Fade>
   );
 }
 
@@ -74,7 +77,7 @@ const Text = styled.p`
 
 const YearText = styled.p`
   font-size: 12px;
-  margin-top: 5em; 
+  margin-top: 5em;
 `;
 
 const Img = styled.img`
