@@ -10,13 +10,13 @@ export default function Project({
   isTextLeft,
   specialMargin,
   specialMarginLeft,
-  specialTextMargin,
+  textMargin,
 }) {
   const newLine = (str) => {
     if (str.includes("newLine")) {
       const split = title.split("newLine");
       return (
-        <Text specialTextMargin={specialTextMargin}>
+        <Text >
           {split.map((e) => (
             <React.Fragment key={e}>
               {e} <br />
@@ -34,7 +34,7 @@ export default function Project({
         specialMargin={specialMargin}
         specialMarginLeft={specialMarginLeft}
       >
-        <TextWrapper isTextTop={isTextTop} isTextLeft={isTextLeft}>
+        <TextWrapper testMargin={textMargin} isTextTop={isTextTop} isTextLeft={isTextLeft}>
           {newLine(title)}
           <YearText>{year}</YearText>
         </TextWrapper>
@@ -66,6 +66,7 @@ const TextWrapper = styled.div`
   justify-content: ${(props) => (props.isTextTop ? "flex-start" : "flex-end")};
   grid-column: ${(props) => (props.isTextLeft ? "1" : "2")};
   grid-row: 1 / 5;
+  margin: ${props => props.textMargin === undefined ? 0: props.testMargin}
 `;
 
 const Text = styled.p`

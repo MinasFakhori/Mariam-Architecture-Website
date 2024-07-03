@@ -24,7 +24,7 @@ export default function App() {
           year="[MA YR 1]"
           isTextTop={true}
           isTextLeft={false}
-          imgWidth="70%"
+          imgWidth="65%"
         />
 
         <Project
@@ -33,7 +33,7 @@ export default function App() {
           year="[BA YR 3]"
           isTextTop={false}
           isTextLeft={true}
-          imgWidth="90%"
+          imgWidth="80%"
           specialMargin="90%"
         />
       </ProjectTwoThreeWrapper>
@@ -57,6 +57,7 @@ export default function App() {
         isTextLeft={false}
         imgWidth="25%"
         specialTextMargin="9em"
+        specialMargin="5em"
       />
       <Contact />
     </Container>
