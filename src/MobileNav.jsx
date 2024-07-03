@@ -1,30 +1,28 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { useTransition } from "react-spring";
+import { NavProjectsPhone } from "./NavProjects";
 
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
-
-  const transition = useTransition(isOpen, {}); 
-
-
-
-
-
+  console.log(NavProjectsPhone);
   return (
     <Container>
       <ClosedContainer>
         <Title>Projects</Title>
-        <Arrow  onClick={() => setIsOpen(!isOpen)}>
+        <Arrow onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? (
-            <ArrowImg  src="angle-up-solid.svg" />
+            <ArrowImg src="angle-up-solid.svg" />
           ) : (
             <ArrowImg src="angle-down-solid.svg" />
           )}
         </Arrow>
       </ClosedContainer>
 
-      {isOpen ? <IDONT>lol</IDONT> : ""}
+      <ContentContainer isOpen={isOpen}>
+        {NavProjectsPhone.map((e) => (
+          <Projects key={e}>{e}</Projects>
+        ))}
+      </ContentContainer>
     </Container>
   );
 }
@@ -64,7 +62,23 @@ const ArrowImg = styled.img`
   width: 80%;
 `;
 
-const IDONT = styled.h1`
-transition: all 1s ease-out;
-background-color:green;
+const ContentContainer = styled.ul`
+  display: flex;
+  flex-direction:column; 
+  align-items:baseline; 
+  list-style-type: none;
+
+  border: 1px solid black; 
+  border-radius: 10px; 
+
+  max-height: ${({ isOpen }) => (isOpen ? "100%" : "0")};
+  overflow: hidden;
+  transition: max-height 0.1s ease-in-out, opacity 0.1s ease-in-out;
+  opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
+`;
+
+const Projects = styled.li`
+  margin: 20px 0px ;
+  flex-wrap:wrap; 
+  
 `;

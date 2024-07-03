@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-import { NavProjects } from "./navProjects";
+import { NavProjects } from "./NavProjects";
 
 export default function Nav() {
   return (
