@@ -1,8 +1,3 @@
-# React + Vite
+# Mariam's Architecture Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Welcome to Mariam's architecture portfolio! While the site is still a work in progress, it offers a glimpse into the projects Mariam has been working on. This collection highlights her creative journey and evolving expertise in the world of architecture. 
